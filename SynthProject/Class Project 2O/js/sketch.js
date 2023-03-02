@@ -1,5 +1,7 @@
 let slider;
 
+let initTone = true;
+
 const synth = new Tone.MetalSynth();
 const drum = new Tone.MembraneSynth();
 const metal = new Tone.MetalSynth({
@@ -66,10 +68,18 @@ function setup() {
   ampEnv.connect(reverb);
 }
 
+function keyPressed(){
+  if (keyCode = 32 && initTone === true) {
+    Tone.start();
+    initTone = false;
+  }
+}
+
 function draw(){
   background(255);
   text("use the slider to change the reverb of the sound", 0, 20);
   text("pres the keys to make some cool sounds", 50,200);
+  text ('press spacebar to initialize sound', 100, 100);
 }
 function keyPressed() {
   let toPlay = notes[key];
