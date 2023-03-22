@@ -44,6 +44,8 @@ function draw() {
   strokeWeight(5);
   stroke(color);
 
+ text("Press circle button for sound ->", 500,10)
+
   if (mouseIsPressed) {
     line(previousX, previousY, mouseX, mouseY);
   }
